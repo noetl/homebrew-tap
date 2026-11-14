@@ -4,8 +4,17 @@
 
 ```bash
 brew tap noetl/tap
+brew trust noetl/tap
 brew install noetl
 ```
+
+`brew trust noetl/tap` is required on current Homebrew: on Homebrew
+7.0.11, `brew install noetl` refuses a formula from a third-party tap
+that has not been trusted. Run it once, after `brew tap`.
+
+The formula builds from source, so the first install also pulls in
+Rust and LLVM and can take several minutes (about 16 minutes on a
+clean macOS runner for 6.4.0).
 
 ## What Gets Installed
 
